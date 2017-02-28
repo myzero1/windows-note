@@ -1,5 +1,6 @@
 # windows-note
-
+##注意
+*window批量处理脚本必须保证是INS编码也就是window默认编编码，不然中文会乱码导致脚本不执行，你可以直接用window自己的note文本编辑器直接变形，也可以用notepad-c++但是一定要注意编码*
 ##windows定时锁屏脚本
 ```pre
 定时锁屏任务
