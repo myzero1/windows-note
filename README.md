@@ -1,5 +1,5 @@
 # windows-note
-##注意
+## 注意
 *window批量处理脚本必须保证是INS编码也就是window默认编编码，不然中文会乱码导致脚本不执行，你可以直接用window自己的note文本编辑器直接变形，也可以用notepad-c++但是一定要注意编码*
 ##windows定时锁屏脚本
 ```pre
@@ -196,4 +196,11 @@ start "=check-ins" %~dp0check-ins.cmd
 使用VBoxManage clonehd 358f506e-4916-4b23-9ea8-91afcc69c5fd "D:\machine\machines\yungengxin\disk.vdi" --format vdi把其它类型的虚拟硬盘转成vdi
 使用VBoxManage modifyhd 26e5834f-0d78-4ab1-8a0e-25d3e7fb2594 --compact压缩vdi硬盘
 使用VBoxManage clonehd 358f506e-4916-4b23-9ea8-91afcc69c5fd "D:\machine\machines\yungengxin\disk.vmdk" --format vmd把其它的虚拟硬盘转成vmdk及vmware的虚拟硬盘
+```
+
+
+## 有个最简单的防一句cmd命名搞定定时锁屏（win7）
+
+```cmd
+schtasks /create /tn task_lock /tr "rundll32.exe user32.dll,LockWorkStation" /sc minute /mo 45 /F 
 ```
