@@ -73,6 +73,25 @@ rundll32.exe user32.dll,LockWorkStation
 ```
 
 
+##win7 下cmd定时任务
+```pre
+
+schtasks /create /sc minute /mo 5 /tn "LockWorkStation" /tr "rundll32.exe user32.dll,LockWorkStation"  添加
+
+schtasks /query /tn "LockWorkStation"   查看
+
+schtasks /delete /tn "LockWorkStation"  /f   删除
+
+
+参考资料
+https://www.cnblogs.com/magic_evan/archive/2011/10/31/2230349.html
+http://blog.chinaunix.net/uid-24946452-id-2887851.html
+
+
+```
+
+
+
 
 
 
