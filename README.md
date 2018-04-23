@@ -223,3 +223,16 @@ start "=check-ins" %~dp0check-ins.cmd
 ```cmd
 schtasks /create /tn task_lock /tr "rundll32.exe user32.dll,LockWorkStation" /sc minute /mo 45 /F 
 ```
+
+
+
+## 通过脚本创建文件
+
+```cmd
+
+IF EXIST E:\note\%date:~0,4%%date:~5,2%%date:~8,2%.txt (ECHO %date:~0,4%%date:~5,2%%date:~8,2%.txt existed.) else (cd.>%date:~0,4%%date:~5,2%%date:~8,2%.txt)
+
+"D:\Program Files\Sublime Text 3\subl.exe" "E:\note\%date:~0,4%%date:~5,2%%date:~8,2%.txt" 
+
+exit 
+```
